@@ -93,16 +93,19 @@ inc:
                   width: huge
                   attack: true
                   icon: bonus
+                  eq: "%{attack-#{i}-ability}+%{attack-#{i}-proficiency-bonus}+%{attack-#{i}-potency[rank]}"
                 inputs:
-                  - field:
+                  - field: attack-#{i}-ability
                     ref: true
                     misc: true
                     label: "_{Ability}"
+                    control: ref-switch
+                    abilities: "str,dex"
                   - field: attack-#{i}-proficiency
                     control: proficiency
                     label: "_{Proficiency}"
                   - field: attack-#{i}-potency
-                    control: icon
+                    control: counter
                     label: "_{Potency}"
                     icon: runes
               - large-print:
@@ -165,14 +168,15 @@ inc:
                   icon: bonus
                 inputs:
                   - field:
-                    ref: true
                     misc: true
                     label: "_{Ability}"
+                    control: ref-switch
+                    ref: "str,dex"
                   - field: attack-#{i}-proficiency
                     control: proficiency
                     label: "_{Proficiency}"
                   - field: attack-#{i}-potency
-                    control: icon
+                    control: counter
                     label: "_{Potency}"
                     icon: runes
               - large-print:
@@ -245,9 +249,10 @@ inc:
                   icon: bonus
                 inputs:
                   - field:
-                    ref: true
                     label: "_{Ability}"
                     misc: true
+                    control: ref-switch
+                    ref: "str,dex"
                   - span: "+"
                   - field:
                     control: proficiency
@@ -300,9 +305,10 @@ inc:
                   icon: bonus
                 inputs:
                   - field:
-                    ref: true
                     label: "_{Ability}"
                     misc: true
+                    control: ref-switch
+                    ref: "str,dex"
                   - span: "+"
                   - field:
                     control: proficiency
