@@ -4,8 +4,6 @@ group: "_{Core Rulebook}"
 
 inc:
   - copy: feat/specialty-crafting
-    params:
-      num: 1
     contents:
       - article: feat/specialty-crafting
         title: "_{Specialty Crafting}"
